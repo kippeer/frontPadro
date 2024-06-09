@@ -1,0 +1,29 @@
+.produto-montagem {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .produto-montagem h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .produto-montagem ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .produto-montagem li {
+    margin-bottom: 5px;
+  }
+  
+  .total-cost {
+    margin-top: 20px;
+    background-color: #e7f3ff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  

@@ -1,24 +1,25 @@
-// src/components/CalculoReceita.js
 import React, { useState } from 'react';
-import './CalculoReceita.css';
+import './ProdutoMontagem.css';
 
-function CalculoReceita({ ingredientes }) {
+function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal }) {
   const [ingredienteSelecionado, setIngredienteSelecionado] = useState('');
   const [quantidadeUsada, setQuantidadeUsada] = useState('');
-  const [custo, setCusto] = useState(null);
 
-  const handleCalculo = () => {
+  const handleAdicao = () => {
     const ingrediente = ingredientes.find(ing => ing.nome === ingredienteSelecionado);
     if (ingrediente) {
       const quantidadeUsadaKg = quantidadeUsada / 1000; // Converter de gramas para quilogramas
       const custoCalculado = (ingrediente.preco / ingrediente.quantidade) * quantidadeUsadaKg;
-      setCusto(custoCalculado.toFixed(2)); // Armazenar o custo calculado com duas casas decimais
+      const custoFinal = custoCalculado.toFixed(2);
+      onProdutoMontagem({ ingrediente: ingredienteSelecionado, quantidade: quantidadeUsada, custo: custoFinal });
+      setIngredienteSelecionado('');
+      setQuantidadeUsada('');
     }
   };
 
   return (
-    <div className="calculo">
-      <h2>Cálculo de Receita</h2>
+    <div className="produto-montagem">
+      <h2>Montagem do Produto</h2>
       <label>
         Ingrediente:
         <select value={ingredienteSelecionado} onChange={(e) => setIngredienteSelecionado(e.target.value)}>
@@ -34,14 +35,19 @@ function CalculoReceita({ ingredientes }) {
         <input type="number" value={quantidadeUsada} onChange={(e) => setQuantidadeUsada(e.target.value)} />
       </label>
       <br />
-      <button onClick={handleCalculo}>Calcular Custo</button>
-      {custo !== null && (
-        <div>
-          <h3>Custo da Receita: R${custo}</h3>
-        </div>
-      )}
+      <button onClick={handleAdicao}>Adicionar Ingrediente</button>
+      <ul>
+        {calculos.map((calculo, index) => (
+          <li key={index}>
+            {calculo.ingrediente}: {calculo.quantidade}g - R${calculo.custo}
+          </li>
+        ))}
+      </ul>
+      <div className="total-cost">
+        <h3>Custo Total do Produto: R${custoTotal.toFixed(2)}</h3>
+      </div>
     </div>
   );
 }
 
-export default CalculoReceita;
+export default ProdutoMontagem;
