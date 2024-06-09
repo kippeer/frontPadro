@@ -1,9 +1,9 @@
 import React from 'react';
-import './ListaIngredientes.css'; // Importando o arquivo de estilo CSS
+import './ListaIngredientes.css';
 
 function ListaIngredientes({ ingredientes }) {
   return (
-    <div className="lista"> {/* Adicionando a classe "lista" */}
+    <div className="lista">
       <h2>Ingredientes Cadastrados</h2>
       <ul>
         {ingredientes.map((ingrediente, index) => (

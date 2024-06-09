@@ -1,10 +1,8 @@
-// src/App.js
 import React, { useState } from 'react';
 import './App.css';
 import FormularioCadastro from './components/FormularioCadastro';
 import ListaIngredientes from './components/ListaIngredientes';
 import CalculoReceita from './components/CalculoReceita';
-
 
 function App() {
   const [ingredientes, setIngredientes] = useState([]);
@@ -15,9 +13,19 @@ function App() {
 
   return (
     <div className="App">
-      <FormularioCadastro onCadastro={handleCadastro} />
-      <ListaIngredientes ingredientes={ingredientes} />
-      <CalculoReceita ingredientes={ingredientes} />
+      <div className="container">
+        <div className="banners">
+          <div className="banner">
+            <FormularioCadastro onCadastro={handleCadastro} />
+          </div>
+          <div className="banner">
+            <ListaIngredientes ingredientes={ingredientes} />
+          </div>
+          <div className="banner">
+            <CalculoReceita ingredientes={ingredientes} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

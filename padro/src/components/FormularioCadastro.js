@@ -1,4 +1,3 @@
-// src/components/FormularioCadastro.js
 import React, { useState } from 'react';
 import './FormularioCadastro.css';
 
@@ -20,7 +19,7 @@ function FormularioCadastro({ onCadastro }) {
   };
 
   return (
-    <div className="formulario"> {/* Adicionando a classe "formulario" */}
+    <div className="formulario">
       <h2>Cadastro de Ingredientes</h2>
       <label>
         Nome do Ingrediente:

@@ -1,10 +1,13 @@
-/* src/components/FormularioCadastro.css */
 .formulario {
-  margin-bottom: 20px;
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .formulario label {
@@ -16,6 +19,8 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .formulario button {
@@ -28,85 +33,6 @@
   cursor: pointer;
 }
 
-/* src/components/ListaIngredientes.css */
-.lista {
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.lista h2 {
-  margin-top: 0;
-}
-
-.lista ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.lista li {
-  margin-bottom: 5px;
-}
-
-/* src/components/CalculoReceita.css */
-.calculo {
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.calculo h2 {
-  margin-top: 0;
-}
-
-.calculo label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.calculo select,
-.calculo input {
-  width: calc(50% - 5px);
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.calculo button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Estilo global */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.banners {
-  display: flex;
-  justify-content: space-between;
-}
-
-.banner {
-  width: calc(33.33% - 10px);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.formulario button:hover {
+  background-color: #0056b3;
 }

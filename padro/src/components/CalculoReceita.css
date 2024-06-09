@@ -1,43 +1,39 @@
-/* src/components/CalculoReceita.css */
 .calculo {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-  }
-  
-  .calculo h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  
-  .calculo label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .calculo select,
-  .calculo input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .calculo button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Adicionando estilo de hover ao botão */
-  .calculo button:hover {
-    background-color: #0056b3;
-  }
-  
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calculo h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.calculo label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.calculo select,
+.calculo input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.calculo button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculo button:hover {
+  background-color: #0056b3;
+}

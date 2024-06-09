@@ -1,4 +1,3 @@
-
 // src/components/CalculoReceita.js
 import React, { useState } from 'react';
 import './CalculoReceita.css';
@@ -6,17 +5,24 @@ import './CalculoReceita.css';
 function CalculoReceita({ ingredientes }) {
   const [ingredienteSelecionado, setIngredienteSelecionado] = useState('');
   const [quantidadeUsada, setQuantidadeUsada] = useState('');
+  const [custo, setCusto] = useState(null);
 
   const handleCalculo = () => {
-    // Lógica para calcular o custo da receita com base no ingrediente selecionado e na quantidade usada
+    const ingrediente = ingredientes.find(ing => ing.nome === ingredienteSelecionado);
+    if (ingrediente) {
+      const quantidadeUsadaKg = quantidadeUsada / 1000; // Converter de gramas para quilogramas
+      const custoCalculado = (ingrediente.preco / ingrediente.quantidade) * quantidadeUsadaKg;
+      setCusto(custoCalculado.toFixed(2)); // Armazenar o custo calculado com duas casas decimais
+    }
   };
 
   return (
-    <div className="calculo"> {/* Adicionando a classe "calculo" */}
+    <div className="calculo">
       <h2>Cálculo de Receita</h2>
       <label>
         Ingrediente:
-        <select className="select" value={ingredienteSelecionado} onChange={(e) => setIngredienteSelecionado(e.target.value)}>
+        <select value={ingredienteSelecionado} onChange={(e) => setIngredienteSelecionado(e.target.value)}>
+          <option value="" disabled>Selecione um ingrediente</option>
           {ingredientes.map((ingrediente, index) => (
             <option key={index} value={ingrediente.nome}>{ingrediente.nome}</option>
           ))}
@@ -25,10 +31,15 @@ function CalculoReceita({ ingredientes }) {
       <br />
       <label>
         Quantidade Usada (g):
-        <input className="input" type="number" value={quantidadeUsada} onChange={(e) => setQuantidadeUsada(e.target.value)} />
+        <input type="number" value={quantidadeUsada} onChange={(e) => setQuantidadeUsada(e.target.value)} />
       </label>
       <br />
-      <button className="button" onClick={handleCalculo}>Calcular Custo</button>
+      <button onClick={handleCalculo}>Calcular Custo</button>
+      {custo !== null && (
+        <div>
+          <h3>Custo da Receita: R${custo}</h3>
+        </div>
+      )}
     </div>
   );
 }
