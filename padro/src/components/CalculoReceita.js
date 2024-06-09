@@ -45,3 +45,4 @@ function CalculoReceita({ ingredientes }) {
 }
 
 export default CalculoReceita;
+c
