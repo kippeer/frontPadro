@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './ProdutoMontagem.css';
 
-function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal }) {
+function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal, onSalvarProduto }) {
   const [ingredienteSelecionado, setIngredienteSelecionado] = useState('');
   const [quantidadeUsada, setQuantidadeUsada] = useState('');
+  const [produtoNome, setProdutoNome] = useState('');
 
   const handleAdicao = () => {
     const ingrediente = ingredientes.find(ing => ing.nome === ingredienteSelecionado);
@@ -14,6 +15,13 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
       onProdutoMontagem({ ingrediente: ingredienteSelecionado, quantidade: quantidadeUsada, custo: custoFinal });
       setIngredienteSelecionado('');
       setQuantidadeUsada('');
+    }
+  };
+
+  const handleSalvar = () => {
+    if (produtoNome) {
+      onSalvarProduto(produtoNome);
+      setProdutoNome('');
     }
   };
 
@@ -39,13 +47,18 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
       <ul>
         {calculos.map((calculo, index) => (
           <li key={index}>
-            {calculo.ingrediente}: {calculo.quantidade}g - R${calculo.custo}
+            {calculo.ingrediente}: {calculo.quantidade} g - R${calculo.custo}
           </li>
         ))}
       </ul>
       <div className="total-cost">
-        <h3>Custo Total do Produto: R${custoTotal.toFixed(2)}</h3>
+        <h3>Custo Total: R${custoTotal.toFixed(2)}</h3>
       </div>
+      <label>
+        Nome do Produto:
+        <input type="text" value={produtoNome} onChange={(e) => setProdutoNome(e.target.value)} />
+      </label>
+      <button onClick={handleSalvar}>Salvar Produto</button>
     </div>
   );
 }

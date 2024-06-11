@@ -1,0 +1,38 @@
+.produtos-salvos {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .produtos-salvos h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .produtos-salvos ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .produtos-salvos > ul > li {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .produtos-salvos ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  
+  .produtos-salvos ul ul li {
+    background-color: #e9ecef;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
