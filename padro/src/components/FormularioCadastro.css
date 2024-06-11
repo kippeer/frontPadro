@@ -15,12 +15,13 @@
   margin-bottom: 10px;
 }
 
-.formulario input {
+.formulario input,select {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: large;
 }
 
 .formulario button {
@@ -31,8 +32,10 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: medium;
 }
 
 .formulario button:hover {
   background-color: #0056b3;
 }
+

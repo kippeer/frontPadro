@@ -3,22 +3,27 @@ import './FormularioCadastro.css';
 
 function FormularioCadastro({ onCadastro }) {
   const [nome, setNome] = useState('');
+  const [tipo, setTipo] = useState('kg'); // Estado para armazenar o tipo de unidade (kg ou unidade)
   const [quantidade, setQuantidade] = useState('');
   const [preco, setPreco] = useState('');
 
   const handleCadastro = () => {
     const novoIngrediente = {
       nome: nome,
+      tipo: tipo, // Adicionando o tipo de unidade ao objeto do ingrediente
       quantidade: quantidade,
       preco: preco
     };
     onCadastro(novoIngrediente);
     setNome('');
+    setTipo('kg'); // Reiniciar o tipo para kg após o cadastro
     setQuantidade('');
     setPreco('');
   };
 
   return (
+    
+
     <div className="formulario">
       <h2>Cadastro de Ingredientes</h2>
       <label>
@@ -27,7 +32,15 @@ function FormularioCadastro({ onCadastro }) {
       </label>
       <br />
       <label>
-        Quantidade Comprada (kg):
+        Tipo de Unidade:
+        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+          <option value="kg">Quilograma (kg)</option>
+          <option value="unidade">Unidade</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Quantidade Comprada ({tipo === 'kg' ? 'kg' : 'unidades'}):
         <input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} />
       </label>
       <br />
@@ -38,6 +51,7 @@ function FormularioCadastro({ onCadastro }) {
       <br />
       <button onClick={handleCadastro}>Cadastrar Ingrediente</button>
     </div>
+    
   );
 }
 

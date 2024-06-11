@@ -1,27 +1,38 @@
-/* Estilo global */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 200px;
-  }
-  
-  .banners {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .banner {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #7fa2da;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.banners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.banner select {
+  width: 200px; /* Defina a largura desejada para os selects */
+}
+
+
+.banner {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(247, 21, 21, 0.1);
+  flex: 1 1 calc(33% - 20px);
+  box-sizing: border-box;
+  min-width: 300px;
+}

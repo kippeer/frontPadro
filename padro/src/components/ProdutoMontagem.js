@@ -4,13 +4,17 @@ import './ProdutoMontagem.css';
 function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal, onSalvarProduto }) {
   const [ingredienteSelecionado, setIngredienteSelecionado] = useState('');
   const [quantidadeUsada, setQuantidadeUsada] = useState('');
+  const [unidadeSelecionada, setUnidadeSelecionada] = useState('kg'); // Adicionando estado para a unidade selecionada
   const [produtoNome, setProdutoNome] = useState('');
 
   const handleAdicao = () => {
     const ingrediente = ingredientes.find(ing => ing.nome === ingredienteSelecionado);
     if (ingrediente) {
-      const quantidadeUsadaKg = quantidadeUsada / 1000; // Converter de gramas para quilogramas
-      const custoCalculado = (ingrediente.preco / ingrediente.quantidade) * quantidadeUsadaKg;
+      let quantidadeUsadaCalculada = quantidadeUsada; // Quantidade usada mantida igual se a unidade for 'kg'
+      if (unidadeSelecionada === 'unidade') {
+        quantidadeUsadaCalculada *= ingrediente.quantidade; // Convertendo quantidade para gramas se a unidade for 'unidade'
+      }
+      const custoCalculado = (ingrediente.preco / ingrediente.quantidade) * quantidadeUsadaCalculada;
       const custoFinal = custoCalculado.toFixed(2);
       onProdutoMontagem({ ingrediente: ingredienteSelecionado, quantidade: quantidadeUsada, custo: custoFinal });
       setIngredienteSelecionado('');
@@ -39,15 +43,22 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
       </label>
       <br />
       <label>
-        Quantidade Usada (g):
+        Quantidade Usada:
         <input type="number" value={quantidadeUsada} onChange={(e) => setQuantidadeUsada(e.target.value)} />
+      </label>
+      <label>
+        Unidade:
+        <select value={unidadeSelecionada} onChange={(e) => setUnidadeSelecionada(e.target.value)}>
+          <option value="kg">kg</option>
+          <option value="unidade">unidade</option>
+        </select>
       </label>
       <br />
       <button onClick={handleAdicao}>Adicionar Ingrediente</button>
       <ul>
         {calculos.map((calculo, index) => (
           <li key={index}>
-            {calculo.ingrediente}: {calculo.quantidade} g - R${calculo.custo}
+            {calculo.ingrediente}: {calculo.quantidade} {unidadeSelecionada} - R${calculo.custo}
           </li>
         ))}
       </ul>

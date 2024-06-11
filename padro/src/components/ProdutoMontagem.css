@@ -1,29 +1,42 @@
 .produto-montagem {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.produto-montagem h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.produto-montagem label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.produto-montagem select,
+.produto-montagem input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: large;
+}
+
+.produto-montagem button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: medium;
   
-  .produto-montagem h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
+}
+
+.produto-montagem button:hover {
+  background-color: #0056b3;
   
-  .produto-montagem ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .produto-montagem li {
-    margin-bottom: 5px;
-  }
-  
-  .total-cost {
-    margin-top: 20px;
-    background-color: #e7f3ff;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
+}

@@ -1,0 +1,29 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Para centralizar os itens horizontalmente */
+  }
+  
+  .navbar li {
+    margin-right: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  .navbar li.active {
+    color: #ff5722; /* Cor do item ativo */
+  }
+  

@@ -8,7 +8,7 @@ function ListaIngredientes({ ingredientes }) {
       <ul>
         {ingredientes.map((ingrediente, index) => (
           <li key={index}>
-            {ingrediente.nome}: {ingrediente.quantidade} kg - R${ingrediente.preco} (R${(ingrediente.preco / ingrediente.quantidade).toFixed(2)}/kg)
+            {ingrediente.nome}: {ingrediente.quantidade} {ingrediente.tipo === 'kg' ? 'kg' : 'unidades'} - R${ingrediente.preco} ({ingrediente.tipo === 'kg' ? `R$${(ingrediente.preco / ingrediente.quantidade).toFixed(2)}/kg` : `R$${(ingrediente.preco / ingrediente.quantidade).toFixed(2)}/unidade`})
           </li>
         ))}
       </ul>
