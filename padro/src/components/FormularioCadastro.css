@@ -1,3 +1,4 @@
+
 .formulario {
   background-color: #f0f0f0;
   padding: 20px;
@@ -16,8 +17,9 @@
 }
 
 .formulario input,select {
-  width: 100%;
+  width:90%;
   padding: 10px;
+  margin-top:15px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;

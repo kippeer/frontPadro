@@ -1,3 +1,7 @@
+*{
+  font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -10,29 +14,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  
   width: 100%;
-  max-width: 1200px;
+  max-width: 700px;
 }
-
-.banners {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-.banner select {
-  width: 200px; /* Defina a largura desejada para os selects */
-}
-
-
-.banner {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(247, 21, 21, 0.1);
-  flex: 1 1 calc(33% - 20px);
-  box-sizing: border-box;
-  min-width: 300px;
+.container select{
+  width: 90%;
 }

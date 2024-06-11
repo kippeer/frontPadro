@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import FormularioCadastro from './components/FormularioCadastro';
 import ListaIngredientes from './components/ListaIngredientes';
-import CalculoReceita from './components/CalculoReceita';
+
 import ProdutoMontagem from './components/ProdutoMontagem';
 import ProdutosSalvos from './components/ProdutosSalvos';
 import Navbar from './components/Navbar'; // Importe o componente Navbar
@@ -45,7 +45,7 @@ function App() {
       <div className="container">
         {currentPage === 'Cadastro' && <FormularioCadastro onCadastro={handleCadastro} />}
         {currentPage === 'Ingredientes' && <ListaIngredientes ingredientes={ingredientes} />}
-        {currentPage === 'CalculoReceita' && <CalculoReceita ingredientes={ingredientes} />}
+        
         {currentPage === 'Montagem' && <ProdutoMontagem 
                                           ingredientes={ingredientes} 
                                           onProdutoMontagem={handleProdutoMontagem} 

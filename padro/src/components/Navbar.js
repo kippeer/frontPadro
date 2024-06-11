@@ -9,7 +9,7 @@ function Navbar({ currentPage, onPageChange }) {
         <li className={currentPage === 'Ingredientes' ? 'active' : ''} onClick={() => onPageChange('Ingredientes')}>Ingredientes Cadastrados</li>
         <li className={currentPage === 'Montagem' ? 'active' : ''} onClick={() => onPageChange('Montagem')}>Montagem do Produto</li>
         <li className={currentPage === 'Produtos Salvos' ? 'active' : ''} onClick={() => onPageChange('Produtos Salvos')}>Produtos Salvos</li>
-        <li className={currentPage === 'CalculoReceita' ? 'active' : ''} onClick={() => onPageChange('CalculoReceita')}>Cálculo de Receita</li> {/* Adicionando o item CalculoReceita */}
+        
       </ul>
     </nav>
   );

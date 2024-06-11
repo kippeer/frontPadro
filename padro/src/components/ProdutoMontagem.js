@@ -4,19 +4,28 @@ import './ProdutoMontagem.css';
 function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal, onSalvarProduto }) {
   const [ingredienteSelecionado, setIngredienteSelecionado] = useState('');
   const [quantidadeUsada, setQuantidadeUsada] = useState('');
-  const [unidadeSelecionada, setUnidadeSelecionada] = useState('kg'); // Adicionando estado para a unidade selecionada
+  const [unidadeSelecionada, setUnidadeSelecionada] = useState('grama');
   const [produtoNome, setProdutoNome] = useState('');
 
   const handleAdicao = () => {
     const ingrediente = ingredientes.find(ing => ing.nome === ingredienteSelecionado);
     if (ingrediente) {
-      let quantidadeUsadaCalculada = quantidadeUsada; // Quantidade usada mantida igual se a unidade for 'kg'
-      if (unidadeSelecionada === 'unidade') {
-        quantidadeUsadaCalculada *= ingrediente.quantidade; // Convertendo quantidade para gramas se a unidade for 'unidade'
+      let quantidadeUsadaCalculada = quantidadeUsada;
+      let unidade = unidadeSelecionada;
+      if (unidadeSelecionada === 'unidade' && ingrediente.unidade === 'kg') {
+        quantidadeUsadaCalculada *= 1000; // Converter de kg para gramas
+        unidade = 'grama';
       }
-      const custoCalculado = (ingrediente.preco / ingrediente.quantidade) * quantidadeUsadaCalculada;
+      let custoCalculado = 0;
+      if (unidade === 'grama') {
+        custoCalculado = (ingrediente.preco / ingrediente.quantidade) * (quantidadeUsadaCalculada / 1000); // Calcula o custo em base de grama
+      } else {
+        custoCalculado = ingrediente.preco / ingrediente.quantidade; // Calcula o custo por unidade
+        // Aqui está a alteração necessária para corrigir o erro
+        custoCalculado *= quantidadeUsadaCalculada; // Multiplica pelo número de unidades
+      }
       const custoFinal = custoCalculado.toFixed(2);
-      onProdutoMontagem({ ingrediente: ingredienteSelecionado, quantidade: quantidadeUsada, custo: custoFinal });
+      onProdutoMontagem({ ingrediente: ingredienteSelecionado, quantidade: quantidadeUsada + ' ' + unidade, custo: custoFinal });
       setIngredienteSelecionado('');
       setQuantidadeUsada('');
     }
@@ -49,7 +58,7 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
       <label>
         Unidade:
         <select value={unidadeSelecionada} onChange={(e) => setUnidadeSelecionada(e.target.value)}>
-          <option value="kg">kg</option>
+          <option value="grama">grama</option>
           <option value="unidade">unidade</option>
         </select>
       </label>
@@ -58,7 +67,7 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
       <ul>
         {calculos.map((calculo, index) => (
           <li key={index}>
-            {calculo.ingrediente}: {calculo.quantidade} {unidadeSelecionada} - R${calculo.custo}
+            {calculo.ingrediente}: {calculo.quantidade} - R${calculo.custo}
           </li>
         ))}
       </ul>
