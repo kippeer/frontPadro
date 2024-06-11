@@ -10,8 +10,11 @@ function ProdutosSalvos({ produtos }) {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'PNG', 0, 0);
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         pdf.save("produtos-salvos.pdf");
       });
   };
@@ -19,15 +22,15 @@ function ProdutosSalvos({ produtos }) {
   return (
     <div className="produtos-salvos">
       <h2>Produtos Salvos</h2>
-      <div id="produtos-salvos-content">
-        <ul>
+      <div id="produtos-salvos-content" className="pdf-content">
+        <ul className="product-list">
           {produtos.map((produto, index) => (
-            <li key={index}>
+            <li key={index} className="product-item">
               <strong>{produto.nome}</strong> - Custo Total: R${produto.custoTotal.toFixed(2)}
-              <ul>
+              <ul className="ingredient-list">
                 {produto.calculos.map((calculo, subIndex) => (
-                  <li key={subIndex}>
-                    {calculo.ingrediente}: {calculo.quantidade} g - R${calculo.custo}
+                  <li key={subIndex} className="ingredient-item">
+                    {calculo.ingrediente}: {calculo.quantidade} g - R${Number(calculo.custo).toFixed(2)}
                   </li>
                 ))}
               </ul>
@@ -35,7 +38,7 @@ function ProdutosSalvos({ produtos }) {
           ))}
         </ul>
       </div>
-      <button onClick={downloadPDF}>Download PDF</button>
+      <button onClick={downloadPDF} className="download-btn">Download PDF</button>
     </div>
   );
 }

@@ -1,38 +1,52 @@
 .produtos-salvos {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Add top margin for spacing */
-  }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h2 {
+  color: #4A90E2;
+  text-align: center;
+}
+
+.pdf-content {
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
   
-  .produtos-salvos h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
+}
+
+.product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-item {
+  background: #dad5d5;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
   
-  .produtos-salvos ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .produtos-salvos > ul > li {
-    background-color: #f8f9fa;
-    padding: 10px;
-    border: 1px solid #e9ecef;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  .produtos-salvos ul ul {
-    margin-top: 10px;
-    padding-left: 20px;
-  }
-  
-  .produtos-salvos ul ul li {
-    background-color: #e9ecef;
-    padding: 5px;
-    border-radius: 4px;
-    margin-bottom: 5px;
-  }
-  
+}
+
+.ingredient-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+
+
+.download-btn {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.download-btn:hover {
+  background-color: #357ABD;
+}
