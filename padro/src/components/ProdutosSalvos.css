@@ -1,52 +1,68 @@
 .produtos-salvos {
-  font-family: Arial, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
   margin: 20px;
-}
-
-h2 {
-  color: #4A90E2;
-  text-align: center;
-}
-
-.pdf-content {
-  background-color: aliceblue;
   padding: 20px;
-  border-radius: 10px;
   
+  border-radius: 10px;
+  background-color:white;
 }
+
+.produtos-salvos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
 
 .product-list {
   list-style-type: none;
-  padding: 0;
+  padding: 5px;
+  font-size: 115%;
+  
+  
 }
 
 .product-item {
-  background: #dad5d5;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 8px;
   
+  padding: 10px;
+  border-bottom: 3px solid #333333;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
 }
+
+
 
 .ingredient-list {
   list-style-type: none;
   padding: 0;
-  margin-top: 10px;
+  margin-left: 20px;
 }
 
+.ingredient-item {
+  margin-bottom: 5px;
+}
 
-
-.download-btn {
-  background-color: #4A90E2;
-  color: white;
-  border: none;
+.download-btn, .delete-btn {
+  display: inline-block;
+  margin: 5px;
   padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  display: block;
-  margin: 20px auto;
 }
 
-.download-btn:hover {
-  background-color: #357ABD;
+.download-btn:hover, .delete-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c71b2c;
 }
