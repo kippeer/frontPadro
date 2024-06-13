@@ -42,7 +42,10 @@ function ProdutosSalvos({ produtos }) {
 
   return (
     <div className="produtos-salvos">
-      <h2>Produtos Salvos</h2>
+      
+
+      <h2 className='title'>Produtos Salvos</h2>
+      
       <div id="produtos-salvos-content" className="pdf-content">
         <ul className="product-list">
 

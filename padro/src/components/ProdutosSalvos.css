@@ -5,7 +5,7 @@
   
   border-radius: 10px;
   background-color: white;
-  background-image: url('images.png');
+  
   background-size: contain; /* Ajusta a imagem para cobrir todo o fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-position: center; /* Centraliza a imagem de fundo */
@@ -16,8 +16,7 @@
 
 .produtos-salvos h2 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+  
   
 }
 
