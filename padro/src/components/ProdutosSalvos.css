@@ -10,7 +10,7 @@
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-position: center; /* Centraliza a imagem de fundo */
   padding: 20px; /* Adiciona um pouco de padding para a aparência */
-  border-radius: 10px;
+  
   
 }
 
@@ -66,7 +66,7 @@
   margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
-  color: rgb(170, 133, 133);
+  color: rgb(238, 227, 227);
   background-color: #007bff;
   border: none;
   border-radius: 5px;
