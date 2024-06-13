@@ -4,7 +4,13 @@
   padding: 20px;
   
   border-radius: 10px;
-  background-color:white;
+  background-color: white;
+  background-image: url('images.png');
+  background-size: contain; /* Ajusta a imagem para cobrir todo o fundo */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-position: center; /* Centraliza a imagem de fundo */
+  padding: 20px; /* Adiciona um pouco de padding para a aparência */
+  border-radius: 10px;
   
 }
 
@@ -19,7 +25,7 @@
 .product-list {
   list-style-type: none;
   padding: 5px;
-  
+  background-color: white;
   
   
 }
@@ -40,6 +46,7 @@
 
 
 .ingredient-list {
+  
   list-style-type: none;
   padding: 15px;
   margin-left:120px;
@@ -64,10 +71,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  
 }
 
 .download-btn:hover, .delete-btn:hover {
   background-color: #0056b3;
+  
 }
 
 .delete-btn {
