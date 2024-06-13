@@ -22,8 +22,6 @@ function FormularioCadastro({ onCadastro }) {
   };
 
   return (
-    
-
     <div className="formulario">
       <h2>Cadastro de Ingredientes</h2>
       <label>
@@ -31,13 +29,22 @@ function FormularioCadastro({ onCadastro }) {
         <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
       </label>
       <br />
-      <label>
-        Tipo de Unidade:
-        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option value="kg">Quilograma (kg)</option>
-          <option value="unidade">Unidade</option>
-        </select>
-      </label>
+      <div className="tipo-selecao">
+        <button
+          type="button"
+          className={tipo === 'kg' ? 'selected' : ''}
+          onClick={() => setTipo('kg')}
+        >
+          Quilograma (kg)
+        </button>
+        <button
+          type="button"
+          className={tipo === 'unidade' ? 'selected' : ''}
+          onClick={() => setTipo('unidade')}
+        >
+          Unidade
+        </button>
+      </div>
       <br />
       <label>
         Quantidade Comprada ({tipo === 'kg' ? 'kg' : 'unidades'}):
@@ -51,7 +58,6 @@ function FormularioCadastro({ onCadastro }) {
       <br />
       <button onClick={handleCadastro}>Cadastrar Ingrediente</button>
     </div>
-    
   );
 }
 

@@ -21,7 +21,6 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
         custoCalculado = (ingrediente.preco / ingrediente.quantidade) * (quantidadeUsadaCalculada / 1000); // Calcula o custo em base de grama
       } else {
         custoCalculado = ingrediente.preco / ingrediente.quantidade; // Calcula o custo por unidade
-        // Aqui está a alteração necessária para corrigir o erro
         custoCalculado *= quantidadeUsadaCalculada; // Multiplica pelo número de unidades
       }
       const custoFinal = custoCalculado.toFixed(2);
@@ -55,13 +54,23 @@ function ProdutoMontagem({ ingredientes, onProdutoMontagem, calculos, custoTotal
         Quantidade Usada:
         <input type="number" value={quantidadeUsada} onChange={(e) => setQuantidadeUsada(e.target.value)} />
       </label>
-      <label>
-        Unidade:
-        <select value={unidadeSelecionada} onChange={(e) => setUnidadeSelecionada(e.target.value)}>
-          <option value="grama">grama</option>
-          <option value="unidade">unidade</option>
-        </select>
-      </label>
+      <br />
+      <div className="unidade-selecao">
+        <button
+          type="button"
+          className={unidadeSelecionada === 'grama' ? 'selected' : ''}
+          onClick={() => setUnidadeSelecionada('grama')}
+        >
+          grama
+        </button>
+        <button
+          type="button"
+          className={unidadeSelecionada === 'unidade' ? 'selected' : ''}
+          onClick={() => setUnidadeSelecionada('unidade')}
+        >
+          unidade
+        </button>
+      </div>
       <br />
       <button onClick={handleAdicao}>Adicionar Ingrediente</button>
       <ul>

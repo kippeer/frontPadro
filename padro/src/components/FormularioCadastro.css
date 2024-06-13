@@ -41,3 +41,24 @@
   background-color: #0056b3;
 }
 
+.tipo-selecao {
+  display: flex;
+  gap: 10px;
+}
+
+.tipo-selecao button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #278dec;
+  cursor: pointer;
+}
+
+.tipo-selecao button.selected {
+  
+  background-color: #219c50;
+  color: #fff;
+}
+
+.tipo-selecao button:hover {
+  background-color: #2ce774;
+}
