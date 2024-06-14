@@ -1,7 +1,8 @@
-*{
-  font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  
+/* Estilos básicos */
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -14,10 +15,42 @@
 .container {
   display: flex;
   flex-direction: column;
-  
   width: 100%;
   max-width: 700px;
 }
-.container select{
+
+.container select {
   width: 90%;
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 768px (Tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .container select {
+    width: 95%;
+  }
+}
+
+/* Telas menores que 576px (Celulares em modo retrato) */
+@media (max-width: 576px) {
+  .App {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .container select {
+    width: 100%;
+  }
 }

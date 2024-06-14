@@ -1,3 +1,4 @@
+/* Estilos básicos */
 .lista {
   background-color: #f0f0f0;
   padding: 20px;
@@ -23,4 +24,42 @@
   content: '•';
   margin-right: 5px;
   color: #007bff;
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 768px (Tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  .lista {
+    padding: 15px;
+  }
+
+  .lista h2 {
+    font-size: 1.5em;
+  }
+
+  .lista li {
+    font-size: 1em;
+  }
+}
+
+/* Telas menores que 576px (Celulares em modo retrato) */
+@media (max-width: 576px) {
+  .lista {
+    padding: 10px;
+  }
+
+  .lista h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .lista li {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+
+  .lista li::before {
+    font-size: 1.2em;
+  }
 }

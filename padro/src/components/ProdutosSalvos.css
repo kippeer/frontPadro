@@ -1,63 +1,42 @@
+/* Estilos básicos */
 .produtos-salvos {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin: 20px;
   padding: 20px;
-  
   border-radius: 10px;
   background-color: white;
-  
   background-size: contain; /* Ajusta a imagem para cobrir todo o fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-position: center; /* Centraliza a imagem de fundo */
-  padding: 20px; /* Adiciona um pouco de padding para a aparência */
-  
-  
 }
 
 .produtos-salvos h2 {
   text-align: center;
-  
-  
 }
-
 
 .product-list {
   list-style-type: none;
   padding: 5px;
   background-color: white;
-  
-  
 }
 
 .product-item {
-  
-  
   border-bottom: 3px solid #333333;
-  
   display: flex;
   align-items: center;
-  
-  
-  
-  margin-left:10px;
+  margin-left: 10px;
 }
 
-
-
 .ingredient-list {
-  
   list-style-type: none;
   padding: 15px;
-  margin-left:120px;
+  margin-left: 120px;
   border-left: 3px solid #333333;
-  
 }
 
 .ingredient-item {
   margin-bottom: 5px;
-  margin-left:70px;
-  
-  
+  margin-left: 70px;
 }
 
 .download-btn, .delete-btn {
@@ -70,12 +49,10 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  
 }
 
 .download-btn:hover, .delete-btn:hover {
   background-color: #0056b3;
-  
 }
 
 .delete-btn {
@@ -84,4 +61,64 @@
 
 .delete-btn:hover {
   background-color: #c71b2c;
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 768px (Tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  .produtos-salvos {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .ingredient-list {
+    margin-left: 80px;
+    padding: 10px;
+  }
+
+  .ingredient-item {
+    margin-left: 40px;
+  }
+
+  .product-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  .download-btn, .delete-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Telas menores que 576px (Celulares em modo retrato) */
+@media (max-width: 576px) {
+  .produtos-salvos {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .ingredient-list {
+    margin-left: 40px;
+    padding: 5px;
+  }
+
+  .ingredient-item {
+    margin-left: 20px;
+  }
+
+  .product-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    padding: 5px 0;
+  }
+
+  .download-btn, .delete-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }

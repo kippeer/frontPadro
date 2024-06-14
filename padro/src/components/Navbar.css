@@ -1,29 +1,61 @@
+/* Estilos básicos */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 25px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 25px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Para centralizar os itens horizontalmente */
+}
+
+.navbar li {
+  margin-right: 20px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.navbar li.active {
+  color: #ff5722; /* Cor do item ativo */
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 768px (Tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 0;
   }
-  
-  .navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Para centralizar os itens horizontalmente */
-  }
-  
+
   .navbar li {
-    margin-right: 20px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-    font-size: larger;
+    margin-right: 15px;
+    font-size: medium;
   }
-  
-  .navbar li.active {
-    color: #ff5722; /* Cor do item ativo */
+}
+
+/* Telas menores que 576px (Celulares em modo retrato) */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 15px 0;
   }
-  
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: small;
+  }
+}

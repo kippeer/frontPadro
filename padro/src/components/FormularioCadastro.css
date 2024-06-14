@@ -1,4 +1,4 @@
-
+/* Estilos básicos */
 .formulario {
   background-color: #f0f0f0;
   padding: 20px;
@@ -16,10 +16,10 @@
   margin-bottom: 10px;
 }
 
-.formulario input,select {
-  width:90%;
+.formulario input, select {
+  width: 90%;
   padding: 10px;
-  margin-top:15px;
+  margin-top: 15px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -54,11 +54,59 @@
 }
 
 .tipo-selecao button.selected {
-  
   background-color: #219c50;
   color: #fff;
 }
 
 .tipo-selecao button:hover {
   background-color: #2ce774;
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 768px (Tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  .formulario {
+    padding: 15px;
+  }
+
+  .formulario input, select {
+    width: 100%;
+    font-size: medium;
+  }
+
+  .formulario button {
+    font-size: small;
+  }
+}
+
+/* Telas menores que 576px (Celulares em modo retrato) */
+@media (max-width: 576px) {
+  .formulario {
+    padding: 10px;
+  }
+
+  .formulario h2 {
+    font-size: 1.5em;
+  }
+
+  .formulario input, select {
+    font-size: small;
+    padding: 8px;
+  }
+
+  .formulario button {
+    font-size: small;
+    padding: 8px;
+  }
+
+  .tipo-selecao {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tipo-selecao button {
+    width: 100%;
+    padding: 8px;
+  }
 }

@@ -1,3 +1,4 @@
+/* Estilos básicos */
 .produto-montagem {
   background-color: #f9f9f9;
   padding: 20px;
@@ -18,7 +19,7 @@
 .produto-montagem select,
 .produto-montagem input {
   width: 95%;
-  margin-top:15px;
+  margin-top: 15px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -34,13 +35,12 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: medium;
-  
 }
 
 .produto-montagem button:hover {
   background-color: #0056b3;
-  
 }
+
 .unidade-selecao {
   display: flex;
   gap: 10px;
@@ -54,11 +54,68 @@
 }
 
 .unidade-selecao button.selected {
-  
   background-color: #219c50;
   color: white;
 }
 
 .unidade-selecao button:hover {
   background-color: #57bb5b;
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 768px (Tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  .produto-montagem {
+    padding: 15px;
+  }
+
+  .produto-montagem h2 {
+    font-size: 1.3em;
+    margin-bottom: 18px;
+  }
+
+  .produto-montagem select,
+  .produto-montagem input {
+    font-size: medium;
+  }
+
+  .produto-montagem button {
+    font-size: small;
+    padding: 8px 16px;
+  }
+}
+
+/* Telas menores que 576px (Celulares em modo retrato) */
+@media (max-width: 576px) {
+  .produto-montagem {
+    padding: 10px;
+  }
+
+  .produto-montagem h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .produto-montagem select,
+  .produto-montagem input {
+    width: 100%;
+    font-size: small;
+    padding: 8px;
+  }
+
+  .produto-montagem button {
+    font-size: small;
+    padding: 8px 12px;
+  }
+
+  .unidade-selecao {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .unidade-selecao button {
+    width: 100%;
+    padding: 8px;
+  }
 }
